@@ -1,0 +1,21 @@
+<div class="task-editor">
+  <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+    <h2 class="task-form-title">Edit task</h2>
+    <div class="task-form-field">
+      <label for="editor-title">Title</label>
+      <input id="editor-title" type="text" formControlName="title" placeholder="Task title">
+    </div>
+    <div class="task-form-field">
+      <label for="editor-description">Description</label>
+      <textarea id="editor-description" formControlName="description" placeholder="What needs to be done?" rows="3"></textarea>
+    </div>
+    <div class="task-form-field">
+      <label for="editor-dueDate">Due date</label>
+      <input id="editor-dueDate" type="date" formControlName="dueDate">
+    </div>
+    <div class="task-form-actions">
+      <button class="task-form-cancel" type="button" (click)="dialogRef.close()">Cancel</button>
+      <button class="task-form-submit" type="submit" [disabled]="taskForm.invalid">Save</button>
+    </div>
+  </form>
+</div>

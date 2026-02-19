@@ -1,0 +1,50 @@
+/* Global styles – UNC Carolina vibe, light theme */
+:root {
+  /* Carolina Blue accent, light backgrounds */
+  --carolina-blue: #4B9CD3;
+  --carolina-blue-light: #7BAFD4;
+  --carolina-blue-pale: #E8F4FC;
+  --carolina-blue-dark: #3a7aa8;
+  --board-bg: #f5f6f8;
+  --lane-bg: #ffffff;
+  --lane-header: var(--carolina-blue);
+  --card-bg: #ffffff;
+  --card-border: #e2e8f0;
+  --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --card-hover-shadow: 0 4px 12px rgba(75, 156, 211, 0.18);
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --text-muted: #94a3b8;
+  --accent: var(--carolina-blue);
+  --accent-soft: rgba(75, 156, 211, 0.2);
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+  background: var(--board-bg);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

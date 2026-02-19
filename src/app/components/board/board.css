@@ -1,0 +1,119 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  padding: 0.5rem 1rem 1rem;
+  box-sizing: border-box;
+}
+
+.board-lanes {
+  display: flex;
+  flex: 1 1 0;
+  min-height: 0;
+  gap: 1rem;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 0.5rem;
+}
+
+.board-lanes::-webkit-scrollbar {
+  height: 8px;
+}
+
+.board-lanes::-webkit-scrollbar-track {
+  background: #e2e8f0;
+  border-radius: 4px;
+}
+
+.board-lanes::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.board-lanes::-webkit-scrollbar-thumb:hover {
+  background: var(--carolina-blue-light);
+}
+
+.board-create-task-btn {
+  flex: 0 0 auto;
+  align-self: flex-start;
+  min-width: 120px;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: inherit;
+  color: #fff;
+  background: var(--accent);
+  border: none;
+  border-radius: var(--radius-md, 8px);
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.board-create-task-btn:hover {
+  background: var(--carolina-blue-dark, #3a7aa8);
+  box-shadow: 0 4px 12px rgba(75, 156, 211, 0.35);
+}
+
+.board-create-task-btn:active {
+  transform: scale(0.98);
+}
+
+/* Lane reorder drag – lanes share width and fill the page */
+.board-lane-wrapper {
+  flex: 1 1 0;
+  min-width: 260px;
+  max-width: 400px;
+  cursor: grab;
+  display: flex;
+}
+
+.board-lane-wrapper:active {
+  cursor: grabbing;
+}
+
+.board-lane-wrapper.cdk-drag-dragging .app-swim-lane {
+  opacity: 0.9;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Hold the lane’s space while dragging so other lanes don’t shift until drop */
+.cdk-drag-placeholder {
+  flex: 1 1 0;
+  min-width: 260px;
+  max-width: 400px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.board-settings-btn {
+  flex: 0 0 auto;
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid #cbd5e1;
+  border-radius: var(--radius-md, 8px);
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.board-settings-btn:hover {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: var(--carolina-blue-light);
+  color: var(--text-primary);
+}
+
+.board-settings-btn mat-icon {
+  font-size: 22px;
+  width: 22px;
+  height: 22px;
+}

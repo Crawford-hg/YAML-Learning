@@ -1,0 +1,42 @@
+{
+  "boards": [
+    {
+      "id": 1,
+      "name": "Angular Trello Clone Project",
+      "backgroundColor": "#0079BF"
+    }
+  ],
+  "swim-lanes": [
+    {
+      "id": 4,
+      "name": "Done",
+      "boardId": 1,
+      "position": 1
+    },
+    {
+      "name": "Swim",
+      "boardId": 1,
+      "position": 0,
+      "id": 5
+    },
+    {
+      "name": "Test new Lane",
+      "boardId": 1,
+      "position": 2,
+      "id": 6
+    },
+    {
+      "name": "Wow so many lanes",
+      "boardId": 1,
+      "position": 3,
+      "id": 7
+    },
+    {
+      "name": "Another Lane",
+      "boardId": 1,
+      "position": 4,
+      "id": 8
+    }
+  ],
+  "cards": []
+}

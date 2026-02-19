@@ -1,0 +1,15 @@
+<div class="task-card">
+  <div class="task-card-header">
+    <p class="task-title">{{ task().title }}</p>
+    <div class="task-card-actions">
+      <button class="task-edit-btn" type="button" (click)="openEditDialog()" title="Edit task" aria-label="Edit task">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button class="task-delete-btn" type="button" (click)="deleteTask()" title="Delete task" aria-label="Delete task">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </div>
+  <p class="task-description">{{ task().description }}</p>
+  <p class="task-due">{{ task().dueDate }}</p>
+</div>

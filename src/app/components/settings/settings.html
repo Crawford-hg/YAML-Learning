@@ -1,0 +1,42 @@
+<div class="settings">
+  <button class="settings-home-btn" type="button" (click)="goToBoard()" title="Home" aria-label="Home">
+    <mat-icon>home</mat-icon>
+  </button>
+  <header class="settings-header">
+    <h1 class="settings-title">Settings</h1>
+    <p class="settings-description">Manage swim lanes. Lanes must be empty before they can be deleted.</p>
+  </header>
+  <ul class="settings-lane-list">
+    @for (swimLane of swimLanes(); track swimLane.id) {
+      <li class="settings-lane-item">
+        <span class="settings-lane-name">{{ swimLane.name }}</span>
+        <button class="settings-lane-delete" type="button" (click)="deleteSwimLane(swimLane.id)" title="Delete lane">
+          Delete
+        </button>
+      </li>
+    }
+  </ul>
+  <section class="settings-add-lane">
+    @if (showAddLaneForm()) {
+      <div class="settings-add-lane-form">
+        <input
+          class="settings-add-lane-input"
+          type="text"
+          [value]="newLaneName()"
+          (input)="newLaneName.set($any($event.target).value)"
+          placeholder="Lane name"
+          (keydown.enter)="addLane()"
+          (keydown.escape)="cancelAddLane()">
+        <div class="settings-add-lane-actions">
+          <button class="settings-add-lane-btn" type="button" (click)="addLane()">Add lane</button>
+          <button class="settings-add-lane-cancel" type="button" (click)="cancelAddLane()">Cancel</button>
+        </div>
+      </div>
+    } @else {
+      <button class="settings-add-lane-trigger" type="button" (click)="openAddLane()">+ Add lane</button>
+    }
+  </section>
+  @if (swimLanes().length === 0 && !showAddLaneForm()) {
+    <p class="settings-empty">No swim lanes yet. Add one above.</p>
+  }
+</div>

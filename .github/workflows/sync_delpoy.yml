@@ -21,10 +21,10 @@ jobs:
 
 
     steps:
-      - name: Checkout main branch
+      - name: Checkout build branch
         uses: actions/checkout@v4
         with:
-          ref: main
+          ref: build-and-deploy
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Configure User
@@ -32,14 +32,19 @@ jobs:
           git config user.name "Deploy Bot" 
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Fetch Branch
-        run: git fetch origin deploy:deploy-remote 
+      - name: build site
+        run: 
+          npm install
+          ng build --output-path docs --base-href /YAML-Learning/ --configuration production
 
-      - name: replace files in main with files in deploy
-        run: |
-            git reset --hard deploy-remote
-            git clean -f -d -x
+      - name: deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with: 
+          token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist/trello-clone/browser
+          publish_branch: static-site
 
-      - name: Push changes to main 
-        run: git push origin main
+  
+
+
 

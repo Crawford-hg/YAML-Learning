@@ -1,0 +1,15 @@
+<div
+  class="board-lanes"
+  cdkDropList
+  [cdkDropListData]="swimLanes()"
+  (cdkDropListDropped)="onLaneDrop($event)"
+  [cdkDropListOrientation]="'horizontal'">
+  @for (swimLane of swimLanes(); track swimLane.id) {
+    <div class="board-lane-wrapper" cdkDrag [cdkDragData]="swimLane">
+      <app-swim-lane [swimLane]="swimLane" [connectedLaneIds]="connectedIdsForLane(swimLane)"></app-swim-lane>
+    </div>
+  }
+  <button class="board-settings-btn" type="button" (click)="goToSettings()" title="Settings" aria-label="Settings">
+    <mat-icon>settings</mat-icon>
+  </button>
+</div>

@@ -1,0 +1,18 @@
+:host {
+  display: block;
+  height: 100vh;
+  width: 100%;
+}
+
+/* Outlet doesn’t host the view – the routed component is a sibling. Don’t give it height or it pushes the board down. */
+router-outlet {
+  display: block;
+  height: 0;
+  overflow: visible;
+}
+
+router-outlet + * {
+  display: block;
+  height: 100%;
+  width: 100%;
+}

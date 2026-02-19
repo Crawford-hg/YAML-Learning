@@ -1,0 +1,19 @@
+<div class="lane-header">
+  <span>{{ swimLane().name }}</span>
+  <button class="lane-add-btn" type="button" (click)="openAddTask()" title="Add task" aria-label="Add task">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>
+<div
+  class="lane-cards"
+  cdkDropList
+  [id]="'lane-' + swimLane().id"
+  [cdkDropListConnectedTo]="connectedLaneIds()"
+  [cdkDropListData]="tasks()"
+  (cdkDropListDropped)="onDrop($event)">
+  @for (task of tasks(); track task.id) {
+    <div class="lane-card-wrapper" cdkDrag [cdkDragData]="task">
+      <app-task [task]="task" (deleteTaskOutput)="onDeleteTask($event)" (taskUpdated)="onTaskUpdated($event)"></app-task>
+    </div>
+  }
+</div>

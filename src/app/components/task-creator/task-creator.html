@@ -1,0 +1,21 @@
+<div class="task-creator-modal">
+  <form class="task-form" [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+    <h2 class="task-form-title">New task</h2>
+    <div class="task-form-field">
+      <label for="title">Title</label>
+      <input id="title" type="text" formControlName="title" placeholder="Task title">
+    </div>
+    <div class="task-form-field">
+      <label for="description">Description</label>
+      <input id="description" type="text" formControlName="description" placeholder="What needs to be done?">
+    </div>
+    <div class="task-form-field">
+      <label for="dueDate">Due date</label>
+      <input id="dueDate" type="date" formControlName="dueDate">
+    </div>
+    <div class="task-form-actions">
+      <button class="task-form-cancel" type="button" (click)="onCancel()">Cancel</button>
+      <button class="task-form-submit" type="submit" [disabled]="taskForm.invalid">Create</button>
+    </div>
+  </form>
+</div>
