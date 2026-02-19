@@ -24,7 +24,7 @@ jobs:
       - name: Checkout build branch
         uses: actions/checkout@v4
         with:
-          ref: build-and-deploy
+          ref: build-and-publish
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Configure User
