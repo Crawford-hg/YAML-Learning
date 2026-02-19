@@ -34,15 +34,18 @@ jobs:
 
       - name: build site
         run: 
-          pwd
           npm install
-          ng build --output-path docs --base-href /YAML-Learning/ --configuration production
+          ng build --output-path docs --base-href /YAML-Learning/ --configuration productio
+          echo pwd
+      -name: list Files 
+        run:
+          echo ls
 
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
         with: 
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist/trello-clone/browser
+          publish_dir: ./dist/trello-clone/browser/
           publish_branch: static-site
 
       - name: End
