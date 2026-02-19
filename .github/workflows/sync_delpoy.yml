@@ -46,7 +46,7 @@ jobs:
 
       - name: End
         run:
-          shell: echo "test"
+          echo "test"
 
 
   
