@@ -35,7 +35,7 @@ jobs:
       - name: build site
         run: |
           npm install
-          npm install @angular/cli
+          npm install -g @angular/cli
           ng build --output-path docs --base-href /YAML-Learning/ --configuration production
 
       - name: echo files 
