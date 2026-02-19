@@ -21,16 +21,6 @@ jobs:
 
 
     steps:
-      - name: Check out previous build
-        uses: actions/checkout@v4
-        with:
-          ref: static-site
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-      -name: remove previous build   
-        run: rm .
-
-
       - name: Checkout build branch
         uses: actions/checkout@v4
         with:
@@ -61,6 +51,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: docs/browser 
           publish_branch: static-site
+          force_orphan: true
 
 
 
