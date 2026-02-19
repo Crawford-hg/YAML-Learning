@@ -43,7 +43,6 @@ jobs:
           cd docs/browser 
           ls
 
-      - 
 
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
