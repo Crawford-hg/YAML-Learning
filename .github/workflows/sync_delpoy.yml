@@ -33,7 +33,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: build site
-        run: 
+        run: |
           npm install
           ng build --output-path docs --base-href /YAML-Learning/ --configuration production
 
