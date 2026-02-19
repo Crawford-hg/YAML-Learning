@@ -15,9 +15,10 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   sync_branchs:
+    permissions:
+      content: write
     runs-on: ubuntu-latest
-      permissions:
-        content: write
+
 
     steps:
       - name: Checkout main branch
