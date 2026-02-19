@@ -45,7 +45,8 @@ jobs:
           publish_branch: static-site
 
       - name: End
-        shell: echo "test"
+        run:
+          shell: echo "test"
 
 
   
