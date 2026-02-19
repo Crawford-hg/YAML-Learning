@@ -34,6 +34,7 @@ jobs:
 
       - name: build site
         run: 
+          pwd
           npm install
           ng build --output-path docs --base-href /YAML-Learning/ --configuration production
 
