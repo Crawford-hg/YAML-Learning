@@ -21,6 +21,14 @@ jobs:
 
 
     steps:
+      - name: Remove previous build
+        uses: actions/checkout@v4
+        with:
+          ref: static-site
+          token: ${{ secrets.GITHUB_TOKEN }}
+        run: rm .
+
+
       - name: Checkout build branch
         uses: actions/checkout@v4
         with:
@@ -42,6 +50,8 @@ jobs:
         run: |
           cd docs/browser 
           ls
+
+      - 
 
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
