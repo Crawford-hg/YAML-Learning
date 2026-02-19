@@ -33,8 +33,9 @@ jobs:
         run: git fetch origin deploy:deploy-remote 
 
       - name: replace files in main with files in deploy
-        run: git reset --hard deploy-remote
-             git clean -f -d -x
+        run: |
+            git reset --hard deploy-remote
+            git clean -f -d -x
 
       - name: Push changes to main 
         run: git push origin main
