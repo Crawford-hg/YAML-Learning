@@ -21,11 +21,13 @@ jobs:
 
 
     steps:
-      - name: Remove previous build
+      - name: Check out previous build
         uses: actions/checkout@v4
         with:
           ref: static-site
           token: ${{ secrets.GITHUB_TOKEN }}
+
+      -name: remove previous build   
         run: rm .
 
 
