@@ -39,7 +39,7 @@ jobs:
           ng build --output-path docs --base-href /YAML-Learning/ --configuration production
 
       - name: echo files 
-        run: 
+        run: |
           ls
           cd docs 
           ls
