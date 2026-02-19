@@ -44,6 +44,10 @@ jobs:
           publish_dir: ./dist/trello-clone/browser
           publish_branch: static-site
 
+      - name: End
+        bash: echo "test"
+
+
   
 
 
