@@ -16,7 +16,7 @@ on:
 jobs:
   sync_branchs:
     permissions:
-      content: write
+      contents: write
     runs-on: ubuntu-latest
 
 
