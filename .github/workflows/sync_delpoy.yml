@@ -40,7 +40,6 @@ jobs:
 
       - name: echo files 
         run: |
-          ls
           cd docs 
           ls
 
