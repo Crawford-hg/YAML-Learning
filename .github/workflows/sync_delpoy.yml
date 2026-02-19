@@ -16,8 +16,8 @@ on:
 jobs:
   sync_branchs:
     runs-on: ubuntu-latest
-    permissions:
-      content: write
+      permissions:
+        content: write
 
     steps:
       - name: Checkout main branch
