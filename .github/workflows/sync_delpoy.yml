@@ -47,7 +47,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with: 
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .//trello-clone/browser
+          publish_dir: docs/browser 
           publish_branch: static-site
 
 
