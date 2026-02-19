@@ -34,7 +34,7 @@ jobs:
 
       - name: replace files in main with files in deploy
         run: git reset --hard deploy-remote
-             git clean -fdx 
+             git clean --force -d -x
 
       - name: Push changes to main 
         run: git push origin main
